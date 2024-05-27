@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Homebody Index</title>
+</head>
+<body>
+    <header>
+        <nav>Hamburger menu to the left</nav>
+        <h1>Site title</h1>
+    </header>
+    <main>
+        <section>
+            <header>Step 1: Calculating your astrological sign</header>
+            <form>
+                <label for="birthday">Enter your birthday:</label><br>
+                <input type="date" id="birthday" name="birthday">
+                <input type="submit" value="Submit">
+            </form>
+            <!-- Placeholder to display astrological data after api fetch -->
+            <div id="astrological-sign"></div>
+        </section>
+        <section>
+            <header>Step 2: Fetching your current weather</header>
+            <form>
+                <label for="zipcode">Enter your zipcode:</label><br>
+                <input type="text" id="zipcode" name="zipcode" patter="[0-9{5}]" title="Five digit zip code">
+                <input type="submit" value="Submit">
+            </form>
+             <!-- Placeholder to display weather data after api fetch -->
+             <div id="weather-forcast"></div>
+        </section>
+        <section>
+            <header>Step 3: Evaluating your mood regarding the weather forcast</header>
+            <!-- Possible emoji slider here. Will need javascript -->
+            <form>
+                <label for="feelings">How do you feel about today's weather?</label><br>
+                <input type="range" id="feelings" name="feelings" min="1" max="3" value="2">
+                <div id="feelings-labels">
+                    <span>1. Devastated</span>
+                    <span>2. Meh</span>
+                    <span>3. Pure Happiness</span>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+        <section>
+            <header>Step 4: Calculating your HBI: </header>
+        </section>
+    </main>
+</body>
+</html>
