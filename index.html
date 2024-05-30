@@ -36,13 +36,13 @@
 
         <section>
             <header>Step 2: Fetching your current weather</header>
-            <form>
-                <label for="zipcode">Enter your zipcode:</label><br>
-                <input type="text" id="zipcode" name="zipcode" patter="[0-9{5}]" title="Five digit zip code">
+            <form id="weather-form">
+                <label for="location">Enter your zipcode, postcode, or city name:</label><br>
+                <input type="text" id="location" name="location" title="zip or postcode / city name">
                 <input type="submit" value="Submit">
             </form>
              <!-- Placeholder to display weather data after api fetch -->
-             <div id="weather-forcast"></div>
+             <div id="weather-forecast"></div>
         </section>
 
 
