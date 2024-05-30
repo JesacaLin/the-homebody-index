@@ -26,8 +26,41 @@
     isolation: isolate;
   }
 
-  /*----------------- marquee animation here ------------- */
 
+  /* Regular CSS here */
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+section {
+  padding: 20px;
+}
+
+fieldset {
+    color: rgb(251, 192, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*----------------- marquee animation here ------------- */
+/* 
   .marquee {
     width: 100%;
     overflow: hidden;
@@ -44,4 +77,4 @@
     from { transform: translateX(0); }
     to { transform: translateX(-100%); }
   }
-  
+   */

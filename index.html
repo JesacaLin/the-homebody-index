@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link ref="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>The Homebody Index</title>
 </head>
 <body>
@@ -28,8 +28,12 @@
             </form>
             <!-- Placeholder to display astrological sign after api fetch -->
             <div id="astrological-sign"></div>
-        
+            <!-- Placeholder for horoscope -->
+            <div id="horoscope-result">Fetching your horoscope...</div>
         </section>
+
+
+
         <section>
             <header>Step 2: Fetching your current weather</header>
             <form>
@@ -40,6 +44,8 @@
              <!-- Placeholder to display weather data after api fetch -->
              <div id="weather-forcast"></div>
         </section>
+
+
         <section>
             <header>Step 3: Evaluating your mood regarding the weather forcast</header>
             <!-- Possible emoji slider here. Will need javascript -->
@@ -54,14 +60,17 @@
                 <input type="submit" value="Submit">
             </form>           
         </section>
+
+
         <section>
             <header>Step 4: Analyzing today's horoscope </header>
-            <!-- Placeholder for horoscope -->
-            <div id="horoscope"></div>
+            <button id="sentiment-button">Analyze horoscope!</button>
             <h4>Sentiment analysis result: </h4>
             <!-- Placeholder for sentiment analysis -->
             <div id="sentiment-result"></div>
         </section>
+
+
         <section>
             <header>Step 5: Calculating your HBI: </header>
             <h3>Your HBI score:</h3>
