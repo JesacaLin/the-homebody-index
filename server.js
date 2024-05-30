@@ -15,6 +15,20 @@ app.get('/horoscope/:sign', async (req, res) => {
  }
 });
 
+app.get('/weather/:location', async (req, res) => {
+    try {
+        const { location } = req.params;
+        const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?q=${location}&days=1&dt=today&alerts=alerts%3Dyes&aqi=aqi%3Dno`, {
+            headers: {
+                'Authorization': `Bearer ${process.env.WEATHER_API}`
+            }
+        });
+        res.json(response.data);
+    } catch (error) {
+        res.status(500).json({ error: error.toString() });
+    }
+})
+
 app.get('/', (req, res) => {
     res.send('Server is running. This is the root URL')
 })

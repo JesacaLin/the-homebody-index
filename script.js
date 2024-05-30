@@ -1,9 +1,11 @@
 // ------ importing helper functions from separate modules
 import { calculateSign } from "./helpers.js";
 import { fetchHoroscope } from "./api.js";
+import { fetchWeather } from "./api.js";
 
 // ------ dom form variables
 const birthdayForm = document.getElementById('birthday-form');
+const weatherForm = document.getElementById('weather-form');
 
 // Getting the birthday from the user.
 birthdayForm.addEventListener('submit', async function(event) {
@@ -25,7 +27,19 @@ birthdayForm.addEventListener('submit', async function(event) {
    } else {
        document.getElementById('horoscope-result').textContent = horoscope;
    }
-
-    
 })
 
+weatherForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    let location = document.getElementById('location').value;
+
+    //call the weather api.
+    const weather = await fetchWeather(location);
+    if (typeof weather == 'string' && weather.startsWith('HTTP error')) {
+        // Display the error message to the user
+        document.getElementById('weather-forecast').textContent = 'An error occurred while fetching the weather. Please try again later or try entering another format.';
+    } else {
+        document.getElementById('weather-forecast').textContent = JSON.stringify(weather, null, 2);
+    }
+})
