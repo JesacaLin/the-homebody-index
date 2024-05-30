@@ -9,18 +9,26 @@
 <body>
     <header>
         <nav>Hamburger menu to the left</nav>
-        <h1>Site title</h1>
+        <h1>The Homebody Index (HBI)</h1>
     </header>
     <main>
         <section>
             <header>Step 1: Calculating your astrological sign</header>
-            <form>
-                <label for="birthday">Enter your birthday:</label><br>
-                <input type="date" id="birthday" name="birthday">
-                <input type="submit" value="Submit">
+            <form id="birthday-form">
+                <fieldset>
+                    <legend>Birthday</legend>
+
+                    <label for="birth-month">Month:</label>
+                    <input type="number" id="birth-month" name="birth-month">
+
+                    <label for="birth-day">Day:</label>
+                    <input type="number" id="birth-day" name="birth-day">
+                </fieldset>
+                <input type="submit" value="submit">
             </form>
-            <!-- Placeholder to display astrological data after api fetch -->
+            <!-- Placeholder to display astrological sign after api fetch -->
             <div id="astrological-sign"></div>
+        
         </section>
         <section>
             <header>Step 2: Fetching your current weather</header>
@@ -48,17 +56,25 @@
         </section>
         <section>
             <header>Step 4: Analyzing today's horoscope </header>
-            <!-- Placeholder for horoscope api call -->
+            <!-- Placeholder for horoscope -->
             <div id="horoscope"></div>
             <h4>Sentiment analysis result: </h4>
+            <!-- Placeholder for sentiment analysis -->
+            <div id="sentiment-result"></div>
         </section>
         <section>
             <header>Step 5: Calculating your HBI: </header>
             <h3>Your HBI score:</h3>
             <!-- Placeholder for some kind of photo? -->
-            <p>Probably best to stay at home today!</p>
+            <!-- Add a marquee to display what the user should do -->
+            <!-- The actual words can be added via js logic.  -->
+            <div class="marquee">
+                 <p id="stay-at-home-message">Probably best to stay at home today!</p>
+                 <p id="user-choice">You are the boss, you can decide!</p>
+                 <p id="go-outside-message">The HBI indicates it is a good day to be outside!</p>
+            </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
