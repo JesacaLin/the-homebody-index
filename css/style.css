@@ -31,25 +31,78 @@
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 section {
   padding: 20px;
+} 
+
+
+
+
+
+
+
+
+/*----------------- temp toggle here ------------- */
+.toggle-Button{
+  background-color: #d2d2d2;
+  width: 100px;
+  height: 50px;
+  border-radius: 100px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
 }
 
 
+.toggle-Button::before, .toggle-Button::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  width: 45px;
+  height: 45px;
+  border-radius: 100px;
+  transition: 0.2s;
+}
 
 
+.toggle-Button::before {
+  content: 'F\00B0';
+  left: 5px;
+  text-align: center;
+  line-height: 22.5px;
+}
 
 
+.toggle-Button::after {
+  content: 'C\00B0';
+  right: 5px;
+  text-align: center;
+  line-height: 22.5px;
+}
 
 
+input:checked + .toggle-Button{
+  background-color: #20096d;
+}
 
 
+input:checked + .toggle-Button::before{
+  transform: translateX(50px);
+}
 
+
+#check {
+  display: none;
+}
 
 
 
