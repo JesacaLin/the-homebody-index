@@ -7,6 +7,9 @@ import { fetchWeather } from "./api.js";
 const birthdayForm = document.getElementById('birthday-form');
 const weatherForm = document.getElementById('weather-form');
 
+
+//--------------------BIRTHDAY--------------------
+
 // Getting the birthday from the user.
 birthdayForm.addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -29,6 +32,13 @@ birthdayForm.addEventListener('submit', async function(event) {
    }
 })
 
+//--------------------WEATHER--------------------
+
+//toggle
+// document.getElementById(degreeToggle).addEventListener('change', function() {
+//     document.getElementById('degreeLabel').innerText = this.checked ? 'C' : 'F';
+// });
+
 weatherForm.addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -38,8 +48,9 @@ weatherForm.addEventListener('submit', async function(event) {
     const weather = await fetchWeather(location);
     if (typeof weather == 'string' && weather.startsWith('HTTP error')) {
         // Display the error message to the user
-        document.getElementById('weather-forecast').textContent = 'An error occurred while fetching the weather. Please try again later.';
+        document.getElementById('weather-forecast').textContent = 'An error occurred while fetching the weather. Please try again later or try entering another format.';
     } else {
-        document.getElementById('weather-forecast').textContent = weather;
+        document.getElementById('weather-forecast').textContent = JSON.stringify(weather, null, 2);
+        // document.getElementById('weather-forecast').textContent = weather;
     }
 })

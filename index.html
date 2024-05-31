@@ -29,14 +29,18 @@
             <!-- Placeholder to display astrological sign after api fetch -->
             <div id="astrological-sign"></div>
             <!-- Placeholder for horoscope -->
-            <div id="horoscope-result">Fetching your horoscope...</div>
+            <div id="horoscope-result"></div>
         </section>
-
-
 
         <section>
             <header>Step 2: Fetching your current weather</header>
             <form id="weather-form">
+            <!-- Temp toggle -->
+            <div class="container">
+                <input type="checkbox" id="check">
+                <label for="check" class="toggle-Button"></label>
+            </div>
+            <!-- User location -->
                 <label for="location">Enter your zipcode, postcode, or city name:</label><br>
                 <input type="text" id="location" name="location" title="zip or postcode / city name">
                 <input type="submit" value="Submit">

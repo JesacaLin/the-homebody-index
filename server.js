@@ -21,7 +21,7 @@ app.get('/weather/:location', async (req, res) => {
     const apiKey = process.env.WEATHER_API;
     try {
         const { location } = req.params;
-        const response = await axios.get(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`);
+        const response = await axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=no&alerts=no`);
         res.json(response.data);
     } catch (error) {
         console.log(error)
