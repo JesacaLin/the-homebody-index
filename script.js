@@ -38,8 +38,8 @@ weatherForm.addEventListener('submit', async function(event) {
     const weather = await fetchWeather(location);
     if (typeof weather == 'string' && weather.startsWith('HTTP error')) {
         // Display the error message to the user
-        document.getElementById('weather-forecast').textContent = 'An error occurred while fetching the weather. Please try again later or try entering another format.';
+        document.getElementById('weather-forecast').textContent = 'An error occurred while fetching the weather. Please try again later.';
     } else {
-        document.getElementById('weather-forecast').textContent = JSON.stringify(weather, null, 2);
+        document.getElementById('weather-forecast').textContent = weather;
     }
 })
